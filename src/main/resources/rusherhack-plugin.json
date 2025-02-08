@@ -1,0 +1,12 @@
+{
+  "Plugin-Class": "org.kybe.MaceSwap",
+  "Name": "${project.plugin_name}",
+  "Version": "${project.plugin_version}",
+  "Description": "Mace Swap",
+  "Authors": [
+    "kybe236"
+  ],
+  "Minecraft-Versions": [
+    "${project.minecraft_version}"
+  ]
+}
