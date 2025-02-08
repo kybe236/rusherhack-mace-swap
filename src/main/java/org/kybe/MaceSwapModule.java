@@ -19,14 +19,14 @@ public class MaceSwapModule extends ToggleableModule {
 
 	@Subscribe
 	public void onUpdate(EventUpdate event) {
-		if (mc.player == null || last_slot == -1) return;
+		if (mc.player == null || last_slot == -1 || mc.getConnection() == null) return;
 		if (mc.player.getInventory().selected == last_slot) mc.getConnection().send(new ServerboundSetCarriedItemPacket(last_slot));
 		last_slot = -1;
 	}
 
 	@Subscribe
 	public void onPacketSend(EventPacket.Send event) {
-		if (mc.player == null) return;
+		if (mc.player == null || mc.getConnection() == null) return;
 		if (event.getPacket() instanceof ServerboundInteractPacket packet) {
 			if (packet.isUsingSecondaryAction()) return;
 
