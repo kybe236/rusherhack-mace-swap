@@ -39,6 +39,11 @@ public class MaceSwapModule extends ToggleableModule {
 				}
 			}
 
+			if (slot_of_mace == -1) {
+				last_slot = -1;
+				return;
+			}
+
 			mc.getConnection().send(new ServerboundSetCarriedItemPacket(slot_of_mace));
 		}
 	}
